@@ -1,9 +1,21 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   return (
@@ -13,12 +25,43 @@ const Index = () => {
         <div className="container mx-auto flex justify-between items-center px-4">
           <h1 className="text-2xl font-bold text-[#6E59A5]">SOFTSKILL</h1>
           <div className="hidden md:flex space-x-6">
-            <a href="#about" className="text-gray-700 hover:text-[#9b87f5] transition-colors">О нас</a>
-            <a href="#courses" className="text-gray-700 hover:text-[#9b87f5] transition-colors">Курсы</a>
-            <a href="#reviews" className="text-gray-700 hover:text-[#9b87f5] transition-colors">Отзывы</a>
-            <a href="#contact" className="text-gray-700 hover:text-[#9b87f5] transition-colors">Контакты</a>
+            <a
+              href="#about"
+              className="text-gray-700 hover:text-[#9b87f5] transition-colors"
+            >
+              О нас
+            </a>
+            <a
+              href="#courses"
+              className="text-gray-700 hover:text-[#9b87f5] transition-colors"
+            >
+              Курсы
+            </a>
+            <a
+              href="#reviews"
+              className="text-gray-700 hover:text-[#9b87f5] transition-colors"
+            >
+              Отзывы
+            </a>
+            <a
+              href="#contact"
+              className="text-gray-700 hover:text-[#9b87f5] transition-colors"
+            >
+              Контакты
+            </a>
           </div>
-          <Button className="bg-[#6E59A5] hover:bg-[#9b87f5]">Начать обучение</Button>
+          <div className="flex gap-4">
+            <Button
+              variant="outline"
+              className="border-[#6E59A5] text-[#6E59A5]"
+              onClick={() => navigate("/dashboard")}
+            >
+              Личный кабинет
+            </Button>
+            <Button className="bg-[#6E59A5] hover:bg-[#9b87f5]">
+              Начать обучение
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -27,25 +70,33 @@ const Index = () => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#333333] font-montserrat">
-              Освой программирование <span className="text-[#6E59A5]">с нуля до профи</span>
+              Освой программирование{" "}
+              <span className="text-[#6E59A5]">с нуля до профи</span>
             </h1>
             <p className="text-lg text-gray-700 mb-8">
-              Практические навыки, актуальные технологии, поддержка менторов 
-              и гарантированное трудоустройство
+              Практические навыки, актуальные технологии, поддержка менторов и
+              гарантированное трудоустройство
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#6E59A5] hover:bg-[#9b87f5] px-8">
+              <Button
+                size="lg"
+                className="bg-[#6E59A5] hover:bg-[#9b87f5] px-8"
+              >
                 Выбрать курс
               </Button>
-              <Button size="lg" variant="outline" className="border-[#6E59A5] text-[#6E59A5]">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#6E59A5] text-[#6E59A5]"
+              >
                 Бесплатная консультация
               </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <img 
-              src="https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-              alt="Обучение программированию" 
+            <img
+              src="https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+              alt="Обучение программированию"
               className="rounded-lg shadow-lg max-w-full h-auto"
             />
           </div>
@@ -58,22 +109,33 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-[#333333] font-montserrat">
             Наши <span className="text-[#6E59A5]">курсы</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course, index) => (
-              <Card key={index} className="transition-all hover:shadow-lg hover:-translate-y-1">
+              <Card
+                key={index}
+                className="transition-all hover:shadow-lg hover:-translate-y-1"
+              >
                 <CardHeader>
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#6E59A5]/10 mb-4">
-                    <Icon name={course.icon} className="text-[#6E59A5] w-6 h-6" />
+                    <Icon
+                      name={course.icon}
+                      className="text-[#6E59A5] w-6 h-6"
+                    />
                   </div>
-                  <CardTitle className="font-montserrat">{course.title}</CardTitle>
+                  <CardTitle className="font-montserrat">
+                    {course.title}
+                  </CardTitle>
                   <CardDescription>{course.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
                     {course.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start">
-                        <Icon name="Check" className="mr-2 h-5 w-5 text-[#6E59A5] shrink-0 mt-0.5" />
+                        <Icon
+                          name="Check"
+                          className="mr-2 h-5 w-5 text-[#6E59A5] shrink-0 mt-0.5"
+                        />
                         <span className="text-sm text-gray-600">{feature}</span>
                       </div>
                     ))}
@@ -96,14 +158,22 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-[#333333] font-montserrat">
             Почему выбирают <span className="text-[#6E59A5]">SOFTSKILL</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              >
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#6E59A5]/10 mb-4">
-                  <Icon name={feature.icon} className="text-[#6E59A5] w-6 h-6" />
+                  <Icon
+                    name={feature.icon}
+                    className="text-[#6E59A5] w-6 h-6"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-montserrat">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 font-montserrat">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -117,7 +187,7 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-[#333333] font-montserrat">
             Отзывы наших <span className="text-[#6E59A5]">выпускников</span>
           </h2>
-          
+
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
@@ -125,13 +195,15 @@ const Index = () => {
                   <div className="p-6">
                     <div className="bg-[#F6F7FB] p-8 rounded-lg relative">
                       <div className="flex items-center mb-4">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name} 
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
                           className="w-16 h-16 rounded-full object-cover mr-4"
                         />
                         <div>
-                          <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                          <h4 className="font-semibold text-lg">
+                            {testimonial.name}
+                          </h4>
                           <p className="text-gray-500">{testimonial.role}</p>
                         </div>
                       </div>
@@ -155,10 +227,13 @@ const Index = () => {
             Начните свой путь в программировании
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Оставьте заявку, и наш консультант свяжется с вами, 
-            чтобы подобрать оптимальную программу обучения
+            Оставьте заявку, и наш консультант свяжется с вами, чтобы подобрать
+            оптимальную программу обучения
           </p>
-          <Button size="lg" className="bg-white text-[#6E59A5] hover:bg-gray-100">
+          <Button
+            size="lg"
+            className="bg-white text-[#6E59A5] hover:bg-gray-100"
+          >
             Оставить заявку
           </Button>
         </div>
@@ -178,19 +253,75 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Курсы</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Frontend</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Backend</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Full-stack</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Data Science</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Frontend
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Backend
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Full-stack
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Data Science
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Компания</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">О нас</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Преподаватели</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Партнеры</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Блог</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    О нас
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Преподаватели
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Партнеры
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Блог
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
@@ -198,7 +329,9 @@ const Index = () => {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Icon name="MapPin" className="mr-2 h-5 w-5 text-[#9b87f5]" />
-                  <span className="text-gray-300">Москва, ул. Примерная, 123</span>
+                  <span className="text-gray-300">
+                    Москва, ул. Примерная, 123
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Icon name="Phone" className="mr-2 h-5 w-5 text-[#9b87f5]" />
@@ -231,8 +364,8 @@ const courses = [
       "React и современные фреймворки",
       "Адаптивная верстка и UX/UI",
       "3 месяца обучения",
-      "Сертификат по окончании"
-    ]
+      "Сертификат по окончании",
+    ],
   },
   {
     title: "Backend-разработчик",
@@ -243,8 +376,8 @@ const courses = [
       "REST API и GraphQL",
       "Архитектура приложений",
       "4 месяца обучения",
-      "Помощь в трудоустройстве"
-    ]
+      "Помощь в трудоустройстве",
+    ],
   },
   {
     title: "Full-stack разработчик",
@@ -255,43 +388,49 @@ const courses = [
       "DevOps основы",
       "Проектная работа в команде",
       "6 месяцев обучения",
-      "Гарантия трудоустройства"
-    ]
-  }
+      "Гарантия трудоустройства",
+    ],
+  },
 ];
 
 // Данные для преимуществ
 const features = [
   {
     title: "Практический подход",
-    description: "80% времени — практика на реальных проектах под руководством опытных менторов",
-    icon: "Hammer"
+    description:
+      "80% времени — практика на реальных проектах под руководством опытных менторов",
+    icon: "Hammer",
   },
   {
     title: "Актуальные технологии",
-    description: "Постоянно обновляемые программы на основе требований IT-рынка",
-    icon: "Zap"
+    description:
+      "Постоянно обновляемые программы на основе требований IT-рынка",
+    icon: "Zap",
   },
   {
     title: "Личный ментор",
-    description: "Каждый студент получает поддержку и обратную связь от опытного разработчика",
-    icon: "Users"
+    description:
+      "Каждый студент получает поддержку и обратную связь от опытного разработчика",
+    icon: "Users",
   },
   {
     title: "Стажировка в компаниях",
-    description: "Возможность пройти стажировку у наших партнеров с перспективой трудоустройства",
-    icon: "Briefcase"
+    description:
+      "Возможность пройти стажировку у наших партнеров с перспективой трудоустройства",
+    icon: "Briefcase",
   },
   {
     title: "Гибкий график",
-    description: "Обучение в удобное время — вечерние занятия и записи всех лекций",
-    icon: "Clock"
+    description:
+      "Обучение в удобное время — вечерние занятия и записи всех лекций",
+    icon: "Clock",
   },
   {
     title: "Сообщество",
-    description: "Доступ к сообществу выпускников и нетворкинг с профессионалами отрасли",
-    icon: "Network"
-  }
+    description:
+      "Доступ к сообществу выпускников и нетворкинг с профессионалами отрасли",
+    icon: "Network",
+  },
 ];
 
 // Данные для отзывов
@@ -299,21 +438,24 @@ const testimonials = [
   {
     name: "Алексей Петров",
     role: "Junior Frontend Developer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    text: "После курса Frontend-разработки я смог устроиться на работу в IT-компанию. Преподаватели дали не только теоретические знания, но и научили решать реальные задачи, с которыми я теперь сталкиваюсь каждый день."
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
+    text: "После курса Frontend-разработки я смог устроиться на работу в IT-компанию. Преподаватели дали не только теоретические знания, но и научили решать реальные задачи, с которыми я теперь сталкиваюсь каждый день.",
   },
   {
     name: "Мария Иванова",
     role: "Full-stack Developer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    text: "SOFTSKILL полностью изменил мою жизнь. Я была экономистом, а теперь работаю разработчиком в крупной компании. Обучение было интенсивным, но поддержка менторов и структурированная программа помогли мне успешно сменить профессию."
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
+    text: "SOFTSKILL полностью изменил мою жизнь. Я была экономистом, а теперь работаю разработчиком в крупной компании. Обучение было интенсивным, но поддержка менторов и структурированная программа помогли мне успешно сменить профессию.",
   },
   {
     name: "Дмитрий Смирнов",
     role: "Backend Developer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    text: "Я пришел с небольшим опытом программирования, но благодаря курсу по Backend-разработке смог значительно улучшить свои навыки. Особенно ценными были проектные работы и обратная связь от ментора по моему коду."
-  }
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
+    text: "Я пришел с небольшим опытом программирования, но благодаря курсу по Backend-разработке смог значительно улучшить свои навыки. Особенно ценными были проектные работы и обратная связь от ментора по моему коду.",
+  },
 ];
 
 export default Index;
